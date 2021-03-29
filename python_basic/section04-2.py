@@ -62,6 +62,7 @@ print(a[0:len(a)-1])
 print(a[0:])
 print(a[:])
 print(a[:4])
+print(b[::-1]) # 처음부터 끝까지 나오는데 역순으로
 print(b[0:4:2])
 print(b[1:-2])
 print(b[2:-1])

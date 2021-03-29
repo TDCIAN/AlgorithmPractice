@@ -29,38 +29,40 @@ print(str(c[0])+'hi')
 
 # 리스트 수정, 삭제
 c[0] = 77
-print(c)
+print(c) # [77, 2, 3, 4]
 
 c[1:2] = [100, 1000, 10000]
-print(c)
+print(c) # [77, 100, 1000, 10000, 3, 4]
 c[1] = ['a','b','c']
-print(c)
+print(c) # [77, ['a', 'b', 'c'], 1000, 10000, 3, 4]
 
 del c[1] # 삭제
-print(c)
+print(c) # [77, 1000, 10000, 3, 4]
+del c[-1]
+print(c) # [77, 1000, 10000, 3]
 
 # 리스트 함수
 y = [5, 2, 3, 1, 4]
-print(y)
+print(y) # [5, 2, 3, 1, 4]
 y.append(6)
-print(y)
+print(y) # [5, 2, 3, 1, 4, 6]
 y.sort()
-print(y)
-y.reverse()
-print(y)
+print(y) # [1, 2, 3, 4, 5, 6]
+y.reverse() 
+print(y) # [6, 5, 4, 3, 2, 1]
 y.insert(2, 7) # 2번 인덱스에 7을 넣겠다
-print(y)
+print(y) # [6, 5, 7, 4, 3, 2, 1]
 y.remove(2) # 2를 삭제한다
-print(y)
+print(y) # [6, 5, 7, 4, 3, 1]
 y.remove(7) # 7을 삭제한다
-print(y)
-y.pop()
-print(y)
+print(y) # [6, 5, 4, 3, 1]
+y.pop() # 맨 마지막을 꺼낸다
+print(y) # [6, 5, 4, 3]
 ex = [88, 77]
 y.append(ex) # 리스트 자체를 추가
-print(y)
+print(y) # [6, 5, 4, 3, [88, 77]]
 y.extend(ex) # 리스트 안의 내용을 추가
-print(y)
+print(y) # [6, 5, 4, 3, 88, 77]
 
 # 삭제: del, remove, pop
 # 튜플 -> 순서가 있음, 중복 허용, 수정 불가, 삭제 불가
