@@ -68,5 +68,6 @@ print(user2.__dict__)
 print(user3.__dict__)
 print(WareHouse.__dict__) # 클래스 네임스페이스, 클래스 변수(공유)
 
-print(user1.stock_num)
+print(user1.stock_num) # 자기 네임스페이스에 없으면 클래스 네임스페이스에 가서 찾는다
+
 
