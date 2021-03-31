@@ -75,7 +75,12 @@ with open('/Users/apple/Desktop/FastCampus/python_basic/resource/text2.txt', 'w'
 with open('/Users/apple/Desktop/FastCampus/python_basic/resource/text3.txt', 'w') as f:
     list = ["Kim\n", "Park\n", "Cho\n"]
     f.writelines(list)
-    
+
+# 예제5
+with open('/Users/apple/Desktop/FastCampus/python_basic/resource/text4.txt', 'w') as f:
+    print('Test Contest1!', file=f)
+    print('Test Contest2!', file=f)
+
 
 # class Median:
 #     list_of_num = []
