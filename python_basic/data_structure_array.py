@@ -22,29 +22,29 @@
 # }
 
 country = 'US'
-print(country)
+print(country) # US
 
 country = country + 'A'
-print(country)
+print(country) # USA
 
 # 3. 파이썬과 배열
 # - 파이썬 리스트 활용
 
 # 1차원 배열: 리스트로 구현시
 data = [1,2,3,4,5]
-print(data)
+print(data) # [1, 2, 3, 4, 5]
 
 # 2차원 배열: 리스트로 구현시
 data =[[1,2,3],[4,5,6],[7,8,9]]
-print(data)
-print(data[0][1])
-print(data[1][2])
+print(data) # [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(data[0][1]) # 2
+print(data[1][2]) # 6
 
 # 3. 프로그래밍 연습
 # 위의 2차원 배열에서 9,8,7 순서로 출력해보기
-print(data[2][2])
-print(data[2][1])
-print(data[2][0])
+print(data[2][2]) # 9
+print(data[2][1]) # 8
+print(data[2][0]) # 7
 
 # 연습2: 빈도수 출력하기
 dataset = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]
@@ -53,4 +53,4 @@ m_count = 0
 for data in dataset:
     if data == target:
         m_count += 1
-print("{}는 {}번 들어갔당께".format(target ,m_count))
+print("{}는 {}번 들어갔당께".format(target ,m_count)) # 5는 5번 들어갔당께

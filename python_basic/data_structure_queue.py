@@ -59,7 +59,7 @@ def enqueue(data):
 
 def dequeue():
     data = queue_list[0]
-    del queue_list[0] # 0번 인덱스드의 데이터를 삭제
+    del queue_list[0] # 0번 인덱스의 데이터를 삭제
     return data
 
 for index in range(10):
