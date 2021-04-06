@@ -100,4 +100,5 @@ BST.insert(0)
 BST.insert(8)
 BST.insert(8)
     
-print(BST)
+print(BST.search(8)) # True
+print(BST.search(6))
