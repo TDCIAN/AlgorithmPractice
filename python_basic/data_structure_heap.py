@@ -27,6 +27,7 @@
 
 3. 힙(Heap) 동작
 - 데이터를 힙 구조에 삽입, 삭제하는 과정을 그림을 통해 선명하게 이해하기
+- https://www.fun-coding.org/Chapter11-heap.html
 
 힙에 데이터 삽입하기 - 기본 동작
 - 힙은 완전 이진 트리이므로, 삽입할 노드는 기본적으로 왼쪽 최하단부 노드부터 채워지는 형태로 삽입
@@ -74,6 +75,12 @@
     - 왼쪽 자식 노드 인덱스 번호(left child node's index) = 부모 노드 인덱스 번호(parent node's index) * 2
     - 오른쪽 자식 노드 인덱스 번호(right child node's index) = 부모 노드 인덱스 번호(parent node's index) * 2 + 1
 
+5. 힙(Heap) 시간 복잡도
+- depth(트리의 높이)를 h라고 표기한다면,
+- n개의 노드를 가지는 heap에 데이터 삽입 또는 삭제시, 최악의 경우 root 노드에서 leaf 노드까지 비교해야 하므로
+  h = log2n에 가까우므로, 시간 복잡도는 O(logn)
+    - 참고: 빅오 표기법에서 logn에서의 log의 밑은 10이 아니라, 2입니다.
+    - 한 번 실행시마다, 50%의 실행할 수도 있는 명령을 제거한다는 의미. 즉 50%의 실행시간을 단축시킬 수 있다는 것을 의미함
 """
 
 # 힙에 데이터 삽입 구현 (Max Heap 예)
@@ -179,7 +186,7 @@ print("힙어레이: ",heap.heap_array) # [None, 20, 10, 15, 5, 4, 8]
 print(heap.pop()) # pop을 하면 항상 root의 값이 먼저 나온다 -> 20이 나옴
 print("20 빠진 힙어레이: ", heap.heap_array) # [None, 15, 10, 8, 5, 4]
 print(heap.pop()) # 15
-print("15 빠진 힙어레이: ", heap.heap_array)
-print(heap.pop()) # 10
+print("15 빠진 힙어레이: ", heap.heap_array) # [None, 10, 4, 8, 5]
+
 
 
