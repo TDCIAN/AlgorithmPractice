@@ -38,5 +38,5 @@ def insertion_sort(data):
 
 import random
 data_list = random.sample(range(100), 5)
-print(data_list)
-print(insertion_sort(data_list))
+print(data_list) # [69, 60, 27, 66, 1]
+print(insertion_sort(data_list)) # [1, 27, 60, 66, 69]
