@@ -37,6 +37,11 @@
     5. data_list[index], data_list[index + 1] = data_list[index + 1], data_list[index]
     6. swap += 1
     7. 반복문 안에서 if swap == 0 이면, break 끝
+
+5. 알고리즘 분석
+- 반복문이 두 개 -> O(n^2)
+    - 최악의 경우 n*(n-1)/2
+- 완전 정렬이 되어 있는 상태라면 최선은 O(n)
 """
 
 def bubblesort(data):
