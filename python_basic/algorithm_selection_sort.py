@@ -44,4 +44,10 @@ def selection_sort(data):
 import random
 data_list = random.sample(range(100), 10)
 
-print(selection_sort(data_list))
+print(selection_sort(data_list)) # [9, 15, 26, 30, 63, 74, 79, 80, 93, 95]
+
+"""
+4. 알고리즘 분석
+- 반복문이 두 개 O(n^2)
+    - 실제로 상세하게 계산하면, n * (n-1) / 2
+"""
