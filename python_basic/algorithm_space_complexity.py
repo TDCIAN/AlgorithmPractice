@@ -64,4 +64,4 @@ def factorial(n):
     else:
         return 1
 
-print(factorial(3))
+print(factorial(3)) # 6
