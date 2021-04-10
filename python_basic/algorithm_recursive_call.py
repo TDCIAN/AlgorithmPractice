@@ -190,5 +190,5 @@ def func(data):
 
     return func(data - 1) + func(data - 2) + func(data - 3)
 
-print(func(5))    
+print(func(5)) # 13   
 
