@@ -41,7 +41,7 @@ def fibo(num):
         return num
     return fibo(num - 1) + fibo(num - 2)
 
-print(fibo(10)) # 3
+print(fibo(10)) # 55
 
 # 동적 계획법 활용
 def fibo_dp(num):
@@ -53,4 +53,4 @@ def fibo_dp(num):
         cache[index] = cache[index - 1] + cache[index - 2]
     return cache[num]
 
-print(fibo_dp(10)) # 
+print(fibo_dp(10)) # 55
