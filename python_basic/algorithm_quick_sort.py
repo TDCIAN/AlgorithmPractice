@@ -38,6 +38,13 @@ def qsort(list):
     - return quicksort(left) + pivot + quicksort(right)로 재귀 호출
 
     리스트로 만들어서 리턴하기: return quick_sort(left) + [pivot] + quick_sort(right)
+
+4. 알고리즘 분석
+- 병합정렬과 유사, 시간 복잡도는 O(NlogN)
+    - 단, 최악의 경우
+        - 맨 처음 pivot이 가장 크거나, 가장 작으면
+        - 모든 데이터를 비교하는 상황이 나옴
+        - O(n^2)
 """
 # 반복문 활용
 def qsort(data):
