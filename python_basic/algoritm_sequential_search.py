@@ -20,4 +20,19 @@ def sequential(data_list, search_data):
 
 print(sequential(data_list, 1)) # 0
 print(sequential(data_list, 9)) # 4
-print(sequential(data_list, 8)) # 4
+print(sequential(data_list, 8)) # -1
+
+
+def solution(n):
+  sum = 0
+  string_n = str(n)
+  for i in range(len(string_n)):
+    sum += int(string_n[i])**2
+  print("지금 썸값: ", sum)
+  if sum == 1:
+    print("1 됐네 시벌: ", sum)
+    return True
+  else:
+    solution(sum)
+
+print(solution(19))

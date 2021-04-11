@@ -132,7 +132,9 @@ def palindrome(string):
 print(palindrome('level')) # True
 print(palindrome('tomato')) # False
 
-"""
+""" 
+
+
 프로그래밍 연습
 1. 정수 n에 대해
 2. n이 홀수이면 3 * n + 1을 하고,
