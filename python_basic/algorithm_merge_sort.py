@@ -39,6 +39,28 @@
         else:
             sorted.append(right[right_index])
             right_index += 1
+
+
+mergesplit 함수 만들기
+- 만약 리스트 갯수가 한 개이면 해당 값 리턴
+- 그렇지 않으면, 리스트를 앞뒤, 두 개로 나누기
+- left = mergesplit(앞)
+- right = mergesplit(뒤)
+- merge(left, right)
+
+merge 함수 만들기
+- 목표: left와 right의 리스트 데이터를 정렬해서 sorted_list 라는 이름으로 return 하기
+- left와 right는 이미 정렬된 상태 또는 데이터가 하나임
+
+4. 알고리즘 분석
+- 알고리즘 분석은 쉽지 않음. 이 부분은 참고로만 알아두자.
+    - 몇 단계 깊이까지 만들어지는지를 depth라고 하고 i로 놓자. 맨 위 단계는 0으로 놓자.
+        - 다음 그림에서 n/2^2 는 2단계 깊이라고 해보자.
+        - 각 단계에 있는 하나의 노드 안의 리스트 길이는 n/2^2가 된다.
+        - 각 단계에는 2^i 개의 노드가 있다.
+    - 따라서, 각 단계는 항상 2^i * n/2^i = O(n)
+    - 단계는 항상 logn개 만큼 만들어짐, 시간 복잡도는 결국 O(logn), 2는 역시 상수이므로 삭제
+    - 따라서, 단계별 시간 복잡도는 O(n) * O(logn) = O(nlogn)
 """
 
 # 데이터리스트가 있을 때 리스트를 앞 뒤로 짜르는 코드 작성하기
@@ -51,20 +73,6 @@ def split(data):
 
 data_list = [3, 4, 1, 3, 2, 5, 9]
 
-"""
-mergesplit 함수 만들기
-- 만약 리스트 갯수가 한 개이면 해당 값 리턴
-- 그렇지 않으면, 리스트를 앞뒤, 두 개로 나누기
-- left = mergesplit(앞)
-- right = mergesplit(뒤)
-- merge(left, right)
-"""
-
-"""
-merge 함수 만들기
-- 목표: left와 right의 리스트 데이터를 정렬해서 sorted_list 라는 이름으로 return 하기
-- left와 right는 이미 정렬된 상태 또는 데이터가 하나임
-"""
 def merge(left, right):
     merged = list()
     left_point, right_point = 0, 0
