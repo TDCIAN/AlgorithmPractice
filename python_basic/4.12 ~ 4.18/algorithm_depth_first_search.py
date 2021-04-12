@@ -53,3 +53,5 @@ def dfs(graph, start_node):
     return visited
 
 print("깊이 우선 탐색: ",dfs(graph, 'A'))
+# -> 깊이 우선 탐색:  ['A', 'C', 'I', 'J', 'H', 'G', 'B', 'D', 'F', 'E']
+
