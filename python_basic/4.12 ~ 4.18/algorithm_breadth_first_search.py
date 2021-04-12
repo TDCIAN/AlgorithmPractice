@@ -14,6 +14,17 @@
 2. 파이썬으로 그래프를 표현하는 방법
 - 파이썬에서 제공하는 딕셔너리와 리스트 자료 구조를 활용해서 그래프를 표현할 수 있음
 
+3. BFS 알고리즘 구현
+- 자료구조 큐를 활용함
+    - need_visit 큐와 visited 큐, 두 개의 큐를 생성
+    - 큐의 구현은 간단히 파이썬 리스트를 활용
+
+4. 시간 복잡도
+- 일반적인 BFS 시간 복잡도
+    - 노드 수: V
+    - 간선 수: E
+        - 위 코드에서 while need_visit은 V + E 번 만큼 수행함
+    - 시간 복잡도: O(V + E)
 """
 # 그래프를 파이썬 코드로 만들기
 graph = dict()
@@ -30,3 +41,20 @@ graph['I'] = ['C', 'J']
 graph['J'] = ['I']
 
 print(graph)
+
+# 너비 우선 탐색 코드
+def bfs(graph, start_node):
+    visited = list()
+    need_visit = list()
+
+    need_visit.append(start_node)
+
+    while need_visit:
+        node = need_visit.pop(0)
+        if node not in visited:
+            visited.append(node)
+            need_visit.extend(graph[node])
+
+    return visited
+
+print("너비우선 탐색: ", bfs(graph, 'A'))
