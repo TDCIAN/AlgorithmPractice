@@ -81,6 +81,7 @@ def kruskal(graph):
     return mst
 
 print("크루스칼: ", kruskal(mygraph))
+# 크루스칼:  [(5, 'A', 'D'), (5, 'C', 'E'), (6, 'D', 'F'), (7, 'A', 'B'), (7, 'B', 'E'), (9, 'E', 'G')]
 """
 7. 시간 복잡도
 - 크루스칼 알고리즘의 시간 복잡도는 O(ElogE)
