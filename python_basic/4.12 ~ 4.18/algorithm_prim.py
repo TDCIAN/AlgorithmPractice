@@ -163,3 +163,21 @@ mygraph = {
 mst, total_weight = prim(mygraph, 'A')
 print("MST: ",mst)
 print("토탈 웨이트: ",total_weight)
+
+"""
+개선된 프림 알고리즘의 시간 복잡도: O(ElogV) -> 기존은 O(ElogE) 시간 복잡도
+- 최초 key 생성 시간 복잡도: O(V)
+- while 구문과 keys.popitem()의 시간 복잡도는 O(VlogV)
+    - while 구문은 V(노드 갯수)번 실행됨
+    - heap에서 최소 key 값을 가지는 노드 정보 추출 시(pop)의 시간 복잡도: O(logV)
+- for 구문의 총 시간 복잡도는 O(ElogV)
+    - for 구문은 while 구문 반복시에 결과적으로 총 최대 간선의 수 E만큼 실행 가능 O(E)
+    - for 구문 안에서 key값 변경시마다 heap 구조를 변경해야 하며, heap에는 최대 V개의 정보가 있으므로 O(logV)
+        - 일반적인 heap 자료 구조 자체에는 본래 heap 내부의 데이터 우선순위 변경시, 최소 우선순위 데이터를
+          루트노드로 만들어주는 로직은 없음. 이를 decrease key 로직이라고 부름.
+          해당 로직은 heapdict 라이브러리를 활용해서 간단히 적용 가능
+          
+- 따라서 총 시간 복잡도는 O(V + VlogV + ElogV)이며,
+    - O(V)는 전체 시간 복잡도에 큰 영향을 미치지 않으므로 삭제,
+    - E > V이므로 (최대 V^2 = E가 될 수 있음), O((V + E)logV)는 간단하게 O(ElogV)로 나타낼 수 있음
+"""
