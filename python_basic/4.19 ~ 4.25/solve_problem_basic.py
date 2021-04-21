@@ -25,3 +25,26 @@ elif descending:
     print('descending')
 else:
     print('mixed')
+
+
+"""
+문제 제목: 블랙잭 - 백준 2798번
+문제 난이도: 하(Easy)
+문제 유형: 배열, 완전 탐색
+추천 풀이 시간: 20분
+"""
+n, m = list(map(int, input().split(' ')))
+data = list(map(int, input().split(' ')))
+
+result = 0
+length = len(data)
+
+count = 0
+for i in range(0, length):
+    for j in range(i + 1, length):
+        for k in range(j + 1, length):
+            sum_value = data[i] + data[j] + data[k]
+            if sum_value <= m:
+                result = max(result, sum_value)
+
+print(result)
