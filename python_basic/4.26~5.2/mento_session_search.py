@@ -30,10 +30,39 @@ data = [x for x in range(100000)]
 query = [x for x in range(100000)]
 random.shuffle(data)
 
-# %%time
 # 전략1 - 단순한 O(n) 순차 탐색
 # O(m*n)
 for q in query: # O(m)
     res = q in data # O(n)
-print(%%time)
+
+# 전략2 - 해싱을 이용한 O(1) 탐색 - 추가 메모리 사용 O(n + m)
+data_set = set(data) # O(n)
+for q in query: # O(m)
+    res = q in data_set # O(1)
+
+# 전략3 - 정렬을 이용한 O(logN) 탐색 - 추가 메모리 O(n)
+data_sort = sorted(data) # O(nlogn)
+for q in query: # O(mlogn)
+    res = bisect.bisect(data_sort, q) # O(logn)
+
+# 전략 - 비선형 자료구조로 변환 (Heap, BST, ...)
+# 최소값을 하나씩 반환하는 알고리즘
+# Navie method(나이브하게 짰을 때)
+data_ = data.copy()
+while data_: # O(n^2)
+    val = min(data_) # O(n)
+    data_.remove(val)
+
+# Sorting
+data_sorted = sorted(data, reverse = True) # O(nlogn)
+while data_sorted: # O(n)
+    val = data_sorted[-1] # O(1)
+    del data_sorted[-1]
+
+# Heap으로 만들기
+import heapq
+data_heap = data.copy()
+heapq.heapify(data_heap) # O(nlogn)
+while data_heap: # O(nlogn)
+    val = heapq.heappop(data_heap) # O(logn)
 
